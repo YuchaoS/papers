@@ -61,7 +61,7 @@
                 "首先把问题简化至二维，那么一方面减少了建模难度，另外一方面在真实情况下可以忽略无人机",
                 "向下的风对其他无人机的影响，数据来源于两架无人机在2m*2m的区域内进行飞行,通过RNN估计相对于",
                 "目标的角度和其他一个无人机的角度，而该网络的输入为(dt{间隔时间}，do{跟目标的距离}，vx，vy，vox，voy),",
-                "这些输入通过粒子滤波器来稳定估计其状态的估计DQN的输入",
+                "这些输入通过粒子滤波器来稳定估计,其状态的估计则是DQN的输入",
                 "决策通过DQN，编码每隔45°外加一个减速形成一个one-hot的向量，2维坐标上的目标坐标和障碍坐标这些都来源于粒子滤波器，和自身的",
                 "速度这些来源于mcs。"
             ]
@@ -148,8 +148,108 @@
     ],
     "Viewpoint-tolerant Place Recognition combining 2D and 3D information for UAV navigation":[
         {
-            "Abstract":[],
-            "Author":[]
+            "Abstract":["改进原有视觉测距法，利用有效的二进制特征和局部三维几何的噪声估计做定位和mapping"],
+            "Author":["Fabiola Maffra"," Zetao Chen "," Margarita Chli "],
+            "Introduction":["无人机在做地图重建和定位时的挑战主要在于微小误差的时间累计爆炸，",
+            "第二个就是往往同一个目标需要多个视角的观察，利用Vicon作为（ground-truth）"]
         }
         
+    ],
+    "Visual Saliency–aware Receding Horizon Autonomous Exploration with Application to Aerial Robotics":[
+        {
+            "Abstract":["提出了一种新的基于视觉未知环境探测算法"],
+            "Author":["Tung Dang"," Christos Papachristos","Kostas Alexis"],
+            "Introduction":["本文主要聚焦的问题在于视觉探测算法中的注意力模型，",
+            "整个实验都在室内进行，仅仅依靠视觉惯性定位，目标是使得其能够实现自主探测，",
+        "并且能够快速探索完成"]
+        }
+    ],
+    "Visual Inertial Odometry Swarm: An Autonomous Swarm of Vision-Based Quadrotors":[
+        {
+            "Abstract":["这是一篇关于单目视觉惯性测距的集群无人机应用，包括室内室外都可以部署的编队任务"],
+            "Author":["Aaron Weinstein ",
+            "Adam Cho"," Giuseppe Loianno ",
+            " Vijay Kumar"],
+            "Introduction":["大多的swarm系统基于外部的位置反馈装置比如vicon之类，室外用GPS",
+            "这类方式通过集中式广播所有uav的位置信息，限制了群的鲁棒性，造价和精度无法得到很好的平衡",
+        "所以Visual Odometry应运而生，但是相比其他这方面的工作，这篇文章主要开发了一种可扩展的架构",
+    "第二个就是有12个四旋翼飞机可以做自主导航，最大的群"]
+        }
+    ],
+    "Data Ferrying with Swarming UAS in Tactical Defence Networks":[
+        {
+
+        }
+
+    ],
+    "DroneEARS: Robust Acoustic Source Localization with Aerial Drones":[
+        {
+            "Abstract":["利用无人机进行声源追踪"],
+            "Author":["Prasant Misra",
+                    "A. Anil Kumar",
+                "Pragyan Mohapatra",
+            "Balamuralidhar P"],
+            "Introduction":["对多源的声源探测，主要时对复合信号处理，精度40cm在6m*3m的区间内，用的是双耳",
+            "传感系统，相比于原先的波束传感阵列，用更少的传感器来克服自身和外界的噪声"],
+            "Method":[]
+
+        }   
+    ],
+    "Ultra-Wideband Radar for Robust Inspection Drone in Underground Coal Mines":[
+        {
+            "Abstract":["篇文章用于无人机来探索地下煤矿，由于地下煤矿情况复杂，",
+            "传统的传感器会由于这些复杂的因素而难以完成任务，所以使用UWB来进行障碍物的检测和矿洞墙体的绘制"],
+            "Author":["Fernando Cunha",
+            " Kamal Youcef-Toumi"],
+            "Introduction":["红外传感器在这个任务上的难度在于地下矿洞经常有很大的煤灰。",
+                "而超声波对于这些矿洞的客观问题是很具有鲁棒性的，但是由于超声波本身对于柔软材料",
+                "的探测不是很准确，那么很难避免和工人相撞。UWB{具有更高的分辨率，功率下，",
+                "对其他无线设备的干扰小"],
+            "Method":["模拟地下矿洞环境的容器：除了target（静态）之外，还有些检测煤灰浓度的和湿度的传感器），",
+                "主要用于定量地说明UWB雷达传感器的读数不受环境中煤尘和水分的影响。动态的测试是用一个单摆去完成。"]
+        }
+    ],
+    "Cross-Layer Retrofitting of UAVs Against Cyber-Physical Attacks":[
+        {
+            "Abstract":["提出了一个bluebox的无人机跨层安全框架"],
+            "Author":["Fan Fei"," Zhan Tu","Ruikun Y"],
+            "Introduction":["这篇论文首先定义了安全的范畴，包括保密性，完整性，可用性",
+            "解释为信息的可用权限，防止被破坏链路，主要是地面站",
+            "完整性主要指信息的可信度，可用性主要指完整性受损后是否能够完成任务，那么要接管系统"],
+        }
+    ],
+    "Investigation of Communicative Flight Paths for small UnmannedAerial Systems":[
+        {
+            "Abstract":["本文对于特定飞行路径的人机交互信息做出设计"],
+            "Author":["Brittany A. Duncan","Carrick Detweiler1",
+                "Evan Beachly"," Alisha Bevins", " Sebasitan Elbaum"],
+            "Introduction":["人机交互的方式是通过，小型无人机的特殊飞行轨迹",
+            "在部分轨迹设计上参照了来自仿生学的灵感，并且在实验的时候通过人去进行评测"]
+        }
+    ],
+    "Cooperative object transportation by multiple ground and aerial vehicles: modeling and planning":[
+        {
+            "Abstract":["建模了一个由多空中无人机和地面无人机的运输任务"],
+            "Author":["Martina Lippi"," Alessandro Marino"],
+            "Introduction":["主要考虑的是地面无人机的精准度，多个空中无人机的拉力能够",
+            "提高其负载能力"]
+        }
+    ],
+    "The UNAV, a Wind-Powered UAV for Ocean Monitoring: Performance, Control and Validation":[
+        {
+            "Abstract":[""]
+        }
+    ],
+    "Design and Analysis of a Fixed-Wing Unmanned Aerial-Aquatic Vehicle":[
+        {
+
+        }
+    ],
+    "Radiation Source Localization in GPS–denied Environments using Aerial Robots":[
+        {
+            "Abstract":["放射源定位"]
+        }
     ]
+    
+
+}
